@@ -16,6 +16,7 @@ const navele = [
   },
 ];
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -36,16 +37,19 @@ const Navbar = () => {
                 to={ele.link}
                 className="text-gray-800 hover:text-yellow-700 transition duration-300 font-semibold"
                 key={index}
+                
               >
                 {ele.button}
               </Link>
             ))}
-            <button className="mt-4 md:mt-0 px-6 py-2 text-yellow-700 rounded-lg shadow-lg font-semibold bg-white hover:bg-white/50 transition duration-300">
-              Sign Up
+            <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg font-semibold  transition duration-300">
+              <Link to='/signup' >
+                Sign Up
+              </Link>
             </button>
-            <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
+            {/* <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
               Sign In
-            </button>
+            </button> */}
 
           </div>
 
@@ -84,21 +88,28 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {/* <Link
-              to="/" 
-              className="block text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </Link> */}
+          <div className=" flex flex-col justify-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
+
             {navele.map((ele, index) => (
               <Link
                 to={ele.link}
-                className="block text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-base font-medium" key={index}
+                className="block text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-base font-medium" key={index} onClick={()=> setIsOpen(false)}
               >
                 {ele.button}
               </Link>
             ))}
+            <div className='flex flex-col w-40'>
+              <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 rounded-lg shadow-lg font-semibold text-white hover:bg-white/50 transition duration-300"  onClick={()=> setIsOpen(false)}>
+                <Link to='/signup' >
+                  Sign Up
+                </Link>
+              </button>
+              {/* <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
+
+                Sign In
+              </button> */}
+            </div>
+
           </div>
         </div>
       )}
