@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 const Sidebar = ({ setActiveComponent, isOpen, setIsSidebarOpen }) => {
 
@@ -51,11 +50,6 @@ const Sidebar = ({ setActiveComponent, isOpen, setIsSidebarOpen }) => {
       </div>
     </div>
   );
-};
-Sidebar.propTypes = {
-  setActiveComponent: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  setIsSidebarOpen: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

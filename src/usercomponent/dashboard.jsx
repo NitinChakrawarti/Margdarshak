@@ -5,7 +5,7 @@ import ConnectMentors from './connectmentor';
 import Goals from './goals';
 import Progress from './progress';
 import Chats from './chats';
-// import Sidebar from './Sidebar';
+import Sidebar from './usersidebar';
 
 const DashboardLayout = () => {
   const [activeComponent, setActiveComponent] = useState('Profile');
@@ -56,12 +56,12 @@ const DashboardLayout = () => {
         </div>
       </div>
 
-      {/* <Sidebar
+      <Sidebar
         isOpen={isSidebarOpen}
         setActiveComponent={setActiveComponent}
         setIsSidebarOpen={setIsSidebarOpen}
         className="sticky top-3"
-      /> */}
+      />
 
    
       <div className="flex-1 pt-5 mt-20 md:mt-8 md:pt-0 md:pl-10 md:ml-64 ">{renderComponent()}</div>
