@@ -1,4 +1,3 @@
-import React from 'react';
 import CareerPlanning from "../components/carrier"
 import Resources from '../components/resources'
 import CareerAssessment from '../components/assistance'

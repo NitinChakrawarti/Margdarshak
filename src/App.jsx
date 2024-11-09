@@ -7,7 +7,6 @@ import OurMentors from "./pages/mentors"; // Add Our Mentors component
 import Footer from "./components/footer";
 import SignUp from "./auth/signup.jsx";
 
-
 function App() {
   return (
     <Router>
