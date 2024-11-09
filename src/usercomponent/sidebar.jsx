@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const Sidebar = ({ setActiveComponent, isOpen, setIsSidebarOpen }) => {
-  // Array of sidebar items
+
+
   const sidebarItems = [
     { label: 'Profile', component: 'Profile' },
     { label: 'My Learnings', component: 'My Learnings' },
@@ -11,10 +12,9 @@ const Sidebar = ({ setActiveComponent, isOpen, setIsSidebarOpen }) => {
     { label: 'Chats', component: 'Chats' },
   ];
 
-  // State to track the active component
   const [activeItem, setActiveItem] = useState('Profile');
 
-  // Function to handle item click
+
   const handleMenuClick = (component) => {
     setActiveComponent(component);
     setActiveItem(component); // Set the clicked item as active
@@ -27,12 +27,12 @@ const Sidebar = ({ setActiveComponent, isOpen, setIsSidebarOpen }) => {
         isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
       }`}
     >
-      {/* Sidebar Header */}
+
       <div className="p-5 text-center md:pt-16 mb-10">
         <span className="text-4xl font-bold border-b-2 pb-4 hidden md:block">मार्गदर्शक</span>
       </div>
 
-      {/* Sidebar Items */}
+
       <div className="space-y-4 p-5">
         {sidebarItems.map((item) => (
           <button
