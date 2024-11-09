@@ -43,7 +43,7 @@ const Navbar = () => {
               </Link>
             ))}
             <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg font-semibold  transition duration-300">
-              <Link to='/signup' >
+              <Link to='/user' >
                 Sign Up
               </Link>
             </button>
@@ -100,7 +100,7 @@ const Navbar = () => {
             ))}
             <div className='flex flex-col w-40'>
               <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 rounded-lg shadow-lg font-semibold text-white hover:bg-white/50 transition duration-300"  onClick={()=> setIsOpen(false)}>
-                <Link to='/signup' >
+                <Link to='/user' >
                   Sign Up
                 </Link>
               </button>

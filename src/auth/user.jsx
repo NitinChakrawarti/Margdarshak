@@ -1,9 +1,10 @@
 import React from 'react'
+import Dashboard from '../usercomponent/dashboard'
 
 const User = () => {
   return (
     <div>
-      hello this is user page 
+      <Dashboard />
     </div>
   )
 }
