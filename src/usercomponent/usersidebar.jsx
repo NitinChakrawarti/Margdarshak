@@ -11,7 +11,7 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
   const { user, isAuthenticated, logout } = useAuth0();
 
   const sidebarItems = [
-    { label: 'Profile', component: '/profile' },
+    { label: 'Profile', component: '/' },
     { label: 'My Learnings', component: '/mylearnings' },
     { label: 'Connect with Mentors', component: '/connectmentor' },
     { label: 'Chats', component: '/chats' },

@@ -5,8 +5,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Profile = () => {
   const [userType, setUserType] = useState('Tech');
   const [selectedTags, setSelectedTags] = useState([]);
-  const { user} = useAuth0();
-// console.log(user);
+  const { user } = useAuth0();
+  // console.log(user);
 
   const techTags = ['Development', 'Machine Learning', 'Data Science'];
   const nonTechTags = ['Finance', 'Management', 'Marketing'];
@@ -19,10 +19,20 @@ const Profile = () => {
     );
   };
 
+  const profilesubmit = (e) => {
+    e.preventDefault();
+     user.name = e.target[0].value;
+     user.email = e.target[1].value;
+     user.contact = e.target[2].value;
+     user.userType = userType;
+      user.selectedTags = selectedTags;
+    // console.log(user);
+  }
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h3 className="text-2xl font-semibold text-gray-800 mb-6">User Profile</h3>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={profilesubmit}>
         {/* Name */}
         <div>
           <label className="block text-gray-600">Name</label>
@@ -82,8 +92,8 @@ const Profile = () => {
                 type="button"
                 onClick={() => handleTagToggle(tag)}
                 className={`px-4 py-2 rounded-lg border ${selectedTags.includes(tag)
-                    ? 'bg-yellow-600 text-white'
-                    : 'bg-gray-200 text-gray-800'
+                  ? 'bg-yellow-600 text-white'
+                  : 'bg-gray-200 text-gray-800'
                   }`}
               >
                 {tag}
