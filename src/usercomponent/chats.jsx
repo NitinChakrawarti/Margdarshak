@@ -79,7 +79,7 @@ const Chats = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-center items-center gap-4 px-4 md:contents hidden'>
+                            <div className='md:flex justify-center items-center gap-4 px-4 hidden'>
                                 <IoIosCall className="text-2xl text-yellow-700" />
                                 <FaVideo className="text-2xl text-yellow-700 ml-4" />
                             </div>

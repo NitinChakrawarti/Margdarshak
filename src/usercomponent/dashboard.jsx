@@ -122,7 +122,6 @@ const DashboardLayout = () => {
         {/* Render Route Components */}
         <div className="flex-1 pt-5 mt-20 md:mt-8 md:pt-0 md:pl-10 md:ml-64 ">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
             <Route path="/mylearnings" element={<MyLearnings />} />
             <Route path="/connectmentor" element={<ConnectMentors />} />
             <Route path="/chats" element={<Chats />} />

@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Profile = () => {
   const [userType, setUserType] = useState('Tech');
   const [selectedTags, setSelectedTags] = useState([]);
+  const { user} = useAuth0();
+// console.log(user);
 
   const techTags = ['Development', 'Machine Learning', 'Data Science'];
   const nonTechTags = ['Finance', 'Management', 'Marketing'];
@@ -26,6 +30,8 @@ const Profile = () => {
             type="text"
             placeholder="Enter your name"
             className="w-full mt-2 p-2 border rounded-lg"
+            value={user.name}
+            required
           />
         </div>
 
@@ -36,6 +42,8 @@ const Profile = () => {
             type="email"
             placeholder="Enter your email"
             className="w-full mt-2 p-2 border rounded-lg"
+            value={user.email}
+            required
           />
         </div>
 
@@ -46,6 +54,7 @@ const Profile = () => {
             type="tel"
             placeholder="Enter your contact number"
             className="w-full mt-2 p-2 border rounded-lg"
+            required
           />
         </div>
 
@@ -56,6 +65,7 @@ const Profile = () => {
             value={userType}
             onChange={(e) => setUserType(e.target.value)}
             className="w-full mt-2 p-2 border rounded-lg"
+            required
           >
             <option value="Tech">Tech</option>
             <option value="Non-Tech">Non-Tech</option>
@@ -72,7 +82,7 @@ const Profile = () => {
                 type="button"
                 onClick={() => handleTagToggle(tag)}
                 className={`px-4 py-2 rounded-lg border ${selectedTags.includes(tag)
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-yellow-600 text-white'
                     : 'bg-gray-200 text-gray-800'
                   }`}
               >

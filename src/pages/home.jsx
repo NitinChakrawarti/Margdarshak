@@ -1,6 +1,7 @@
 import CareerPlanning from "../components/carrier"
 import Resources from '../components/resources'
 import CareerAssessment from '../components/assistance'
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,15 +24,18 @@ const Home = () => {
               Take our initial assessment to receive personalized career advice, job recommendations, and more.
             </p>
           </div>
-          <button className="mt-4 md:mt-0 px-6 py-3 bg-yellow-700 text-white rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
-            Start Your Journey
-          </button>
+          <Link to="/user">
+            <button className="mt-4 md:mt-0 px-6 py-3 bg-yellow-700 text-white rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
+              Start Your Journey
+            </button>
+          </Link>
+
         </div>
       </section>
       <div>
         <CareerPlanning />
         <Resources />
-        <CareerAssessment />
+        {/* <CareerAssessment /> */}
       </div>
     </>
   );

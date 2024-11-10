@@ -15,7 +15,7 @@ function Landing() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/ourmentors" element={<OurMentors />} />
-        <Route path="/user" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>
