@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MentorProfile from './mentorprofile';
 import { useContext } from 'react';
 import { BackContext } from '../context/backcontext';
-import mentors from '../mentorsdata';
+import axios from 'axios';
 
 const MentorSection = () => {
   const [mentordata, setmentordata] = React.useState({});
   const backContext = useContext(BackContext);
+  const [mentors, setMentors] = React.useState([]);
   const mentorConnect = (mentor) => {
     backContext.setBack(true);
     setmentordata(mentor);
   };
+  useEffect(()=>{
+    axios.get(import.meta.env.VITE_MENTORS_API+'/mentors')
+    .then((response) => {
+      setMentors(response.data);
+    }
+    )
+    .catch((error) => {
+      console.error('There was an error!', error);
+    });
+  })
 
   return (
     <>
