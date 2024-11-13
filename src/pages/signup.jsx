@@ -15,19 +15,19 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
 
-  
+
 
   return (
     <div className="flex flex-col md:flex-row w-full justify-center">
-      <div className="bg-yellow-700 pt-20 md:pt-0 pb-10 px-5 md:px-10 lg:px-20 flex flex-col items-center justify-center md:w-[30%] w-100">
+      <div className="bg-yellow-700 pt-20 md:pt-0 pb-10 px-5 md:px-10 lg:px-20 h-[45vmax] flex flex-col items-center justify-center md:w-[30%] w-100">
         <h1 className="font-bold text-[6vmax] text-white">मार्गदर्शक</h1>
         <p className="text-lg text-center text-white/80">
           Join us to know the real <br /> power you have
         </p>
       </div>
 
-      <section className="flex flex-col bg-white pt-0 md:pt-24 pb-10 px-5 mt-4 md:px-10 lg:px-20  gap-4 justify-center md:w-[70%] w-100">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 ">
+      <section className="flex flex-col bg-white pt-0 md:pt-0 gap-10 pb-10 px-5 mt-4 md:px-10 lg:px-20 justify-center md:w-[70%] w-100">
+        {/* <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 ">
           <h2 className="text-center text-3xl font-semibold text-gray-800 mb-6">
             {isLogin ? 'Login to Your Account' : 'Create an Account'}
           </h2>
@@ -44,7 +44,7 @@ const SignUp = () => {
                     required
                   />
                 </div>
-               
+
               </>
             )}
             <div>
@@ -95,14 +95,17 @@ const SignUp = () => {
           </div>
         </div>
 
-        <h1 className='text-3xl font-bold ml-48'>Or</h1>
+        <h1 className='text-3xl font-bold ml-48'>Or</h1> */}
+        <div className='font-bold text-3xl ml-36'>
+          Signup now 
+        </div>
         <div className='mx-auto md:ml-32 flex items-center'>
           Continue with
           <button
             onClick={() => loginWithRedirect()}
             className=" flex justify-center items-center gap-4 mx-2 py-2  px-4  text-white rounded-lg shadow-md bg-black hover:bg-yellow-600 transition duration-300"
           >
-           <FaGoogle /> Google
+            <FaGoogle /> Google
           </button>
         </div>
       </section>

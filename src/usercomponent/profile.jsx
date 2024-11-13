@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom';
 
 
 const Profile = () => {
   const [userType, setUserType] = useState('Tech');
   const [selectedTags, setSelectedTags] = useState([]);
   const { user } = useAuth0();
-  // console.log(user);
+  const [profiledata, setProfiledata] = useState(user);
 
   const techTags = ['Development', 'Machine Learning', 'Data Science'];
   const nonTechTags = ['Finance', 'Management', 'Marketing'];
@@ -21,11 +22,11 @@ const Profile = () => {
 
   const profilesubmit = (e) => {
     e.preventDefault();
-     user.name = e.target[0].value;
-     user.email = e.target[1].value;
-     user.contact = e.target[2].value;
-     user.userType = userType;
-      user.selectedTags = selectedTags;
+     setProfiledata.name = e.target[0].value;
+     setProfiledata.email = e.target[1].value;
+     setProfiledata.contact = e.target[2].value;
+     setProfiledata.userType = userType;
+      setProfiledata.selectedTags = selectedTags;
     // console.log(user);
   }
 
@@ -102,12 +103,16 @@ const Profile = () => {
           </div>
         </div>
         <div className='w-40'>
-          <button
-            type="submit"
-            className="mt-4 w-full p-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition duration-300"
-          >
-            Save Profile
-          </button>
+
+          <Link to='/mylearnings'>
+            <button
+              type="submit"
+              className="mt-4 w-full p-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition duration-300"
+            >
+              Save Profile
+            </button>
+          </Link>
+          
         </div>
 
       </form>

@@ -55,7 +55,7 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
               logout({ logoutParams: { returnTo: window.location.origin } })
               navigate('/signup');
             }}
-            className="block w-full text-left font-bold px-4 py-2 rounded-lg text-white/80 hover:text-white"
+            className="block text-left font-bold px-4 py-2 rounded-lg bg-black text-white hover:text-white"
           >
             Logout
           </button>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { IoIosCall } from "react-icons/io";
 import { FaVideo } from "react-icons/fa";
+
 const Chats = () => {
     const [selectedMentor, setSelectedMentor] = useState(null);
     const [message, setMessage] = useState('');
@@ -31,9 +32,9 @@ const Chats = () => {
             {/* Mentors List */}
             <div className="bg-white md:bg-yellow-700 fixed top-0 pt-20 text-white p-4 md:h-full md:w-auto w-full">
                 <h2 className="text-2xl font-bold mb-4 text-black md:text-white">Mentors</h2>
-                {mentors.length > 0 ? (
+                {mentors.mentors.length > 0 ? (
                     <div className={`space-y-4 md:contents ${selectedMentor ? 'hidden' : 'contents'}`}>
-                        {mentors.map((mentor) => (
+                        {mentors.mentors.map((mentor) => (
                             <div
                                 key={mentor.id}
                                 onClick={() => openChat(mentor)}

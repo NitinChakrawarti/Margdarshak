@@ -3,25 +3,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMentor } from '../features/chat/chatSlice';
 import { useContext } from 'react';
 import { BackContext } from '../context/backcontext';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const MentorProfileCard = ({ mentordata }) => {
     const dispatch = useDispatch();
     const mentors = useSelector(state => state.mentors);
-    const backContext = useContext(BackContext);
+    const backContext = useContext(BackContext); 
 
     const handleChat = () => {
-        const isMentorInChat = mentors.find((mentor) => mentor.name === mentordata.name);
-        
+        const isMentorInChat = mentors.mentors.find((mentor) => mentor.name === mentordata.name);
+
         if (!isMentorInChat) {
             dispatch(addMentor(mentordata));
             alert(`Chat with ${mentordata.name} has been initiated. Check your chat list for more details.`);
         }
-        else{
+        else {
             alert(`Chat with ${mentordata.name} is already initiated. Check your chat list for more details.`);
         }
     };
-    const onBackToMentors = ()=>{
+    const onBackToMentors = () => {
         backContext.setBack(false);
     }
     const handleAccessResources = () => {
@@ -48,12 +49,16 @@ const MentorProfileCard = ({ mentordata }) => {
                 <p className="text-md text-gray-500">
                     <strong>Expertise:</strong> {mentordata.expertise}
                 </p>
-                <button
-                    onClick={handleChat}
-                    className="w-full py-2 px-4 bg-yellow-600 text-white rounded-lg font-semibold hover:bg-yellow-700 transition"
-                >
-                    Chat with Mentor
-                </button>
+                <Link to="/chats" >
+                    <button
+                        onClick={handleChat}
+                        className="w-full py-2 px-4 bg-yellow-600 text-white rounded-lg font-semibold hover:bg-yellow-700 transition"
+                    >
+                        Chat with Mentor
+                    </button>
+                </Link>
+
+
                 <button
                     onClick={handleAccessResources}
                     className="w-full py-2 px-4 bg-gray-300 text-gray-500 rounded-lg font-semibold flex items-center justify-center space-x-2 cursor-not-allowed"
@@ -75,13 +80,13 @@ const MentorProfileCard = ({ mentordata }) => {
         </div>
     );
 };
-MentorProfileCard.propTypes = {
-    mentordata: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        jobTitle: PropTypes.string.isRequired,
-        expertise: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-    }).isRequired,
-};
+// MentorProfileCard.propTypes = {
+//     mentordata: PropTypes.shape({
+//         name: PropTypes.string.isRequired,
+//         jobTitle: PropTypes.string.isRequired,
+//         expertise: PropTypes.string.isRequired,
+//         image: PropTypes.string.isRequired,
+//     }).isRequired,
+// };
 
 export default MentorProfileCard;

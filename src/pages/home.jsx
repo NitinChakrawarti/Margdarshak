@@ -24,7 +24,7 @@ const Home = () => {
               Take our initial assessment to receive personalized career advice, job recommendations, and more.
             </p>
           </div>
-          <Link to="/user">
+          <Link to="/signup">
             <button className="mt-4 md:mt-0 px-6 py-3 bg-yellow-700 text-white rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
               Start Your Journey
             </button>
