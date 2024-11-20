@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addtodo } from '../features/chat/todo';
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { AddtaskContext } from '../context/backcontext';
 
 const Addtask = () => {
@@ -10,7 +9,7 @@ const Addtask = () => {
     name: '',
     description: '',
     date: '',
-    label: ''
+    label: 'all' // Default label
   });
 
   const setTaskadd = useContext(AddtaskContext);
@@ -26,8 +25,8 @@ const Addtask = () => {
   const todosubmit = (e) => {
     e.preventDefault();
     dispatch(addtodo(tasktodo));
-    setTasktodo({ name: '', description: '', date: '', label: '' }); // Reset the form after submission
-    setTaskadd.setTaskadd(false)
+    setTasktodo({ name: '', description: '', date: '', label: 'all' }); // Reset state
+    setTaskadd.setTaskadd(false); // Close modal
   };
 
   return (
@@ -38,7 +37,10 @@ const Addtask = () => {
         <div className="bg-white p-6 rounded-lg shadow-lg w-96 max-w-full">
           <div className="flex justify-between items-center mb-4">
             <h1 className="font-semibold text-2xl">Add New Task</h1>
-            <button className="text-gray-500 hover:text-gray-800 text-xl" onClick={()=> setTaskadd.setTaskadd(false)}>
+            <button
+              className="text-gray-500 hover:text-gray-800 text-xl"
+              onClick={() => setTaskadd.setTaskadd(false)}
+            >
               &times;
             </button>
           </div>

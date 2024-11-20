@@ -43,7 +43,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to='/signup' >
-              <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg font-semibold  transition duration-300">
+              <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 hover:bg-yellow-600 text-white rounded-lg shadow-lg font-semibold  transition duration-300">
 
                 Sign Up
 

@@ -104,7 +104,7 @@ const Chats = () => {
                             ))}
                         </div>
 
-                        <div className="mt-4 flex items-center w-full border-t p-2 md:relative fixed bottom-4">
+                        <div className="mt-4 flex items-center w-full border-t p-2 md:relative fixed bottom-4" >
                             <input
                                 type="text"
                                 value={message}

@@ -27,7 +27,7 @@ const Resources = () => {
         <h2 className="text-3xl font-bold">Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {resourceData.map((resource, index) => (
-            <div key={index} className="p-4 bg-gray-200 rounded-lg flex flex-col justify-center items-center gap-4">
+            <div key={index} className="p-4 bg-gray-200 rounded-lg flex flex-col justify-center items-center gap-4 hover:shadow-lg duration-300 " >
               <div>{resource.icon}</div>
               <h3 className="text-xl font-bold">{resource.title}</h3>
               <p className="text-gray-600">{resource.description}</p>

@@ -29,7 +29,7 @@ const CareerPlanning = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {
             carreer.map((ele, index) => (
-              <div key={index} className="p-4 bg-gray-200 rounded-lg flex flex-col justify-center items-center gap-4">
+              <div key={index} className="p-4 bg-gray-200 rounded-lg flex flex-col justify-center items-center gap-4 hover:shadow-lg duration-300">
                 <div className='h-20 w-20'>
                   <img src={ele.img} />
                 </div>

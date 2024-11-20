@@ -1,6 +1,5 @@
 import CareerPlanning from "../components/carrier"
 import Resources from '../components/resources'
-import CareerAssessment from '../components/assistance'
 import { Link } from "react-router-dom";
 
 const Home = () => {
