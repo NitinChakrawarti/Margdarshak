@@ -22,7 +22,7 @@ const resourceData = [
 
 const Resources = () => {
   return (
-    <section id="resources" className="py-16 bg-white px-4 md:px-28">
+    <section id="resources" className="py-16 bg-white px-4 md:px-28 mx-auto">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold">Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">

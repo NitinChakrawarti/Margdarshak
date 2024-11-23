@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div className='flex flex-col md:items-center '>
           <h3 className="text-xl font-semibold text-white">Quick Links</h3>
           <ul className="mt-4 space-y-2 flex flex-col">
             <Link to="/" className='text-white/80 hover:text-white'>

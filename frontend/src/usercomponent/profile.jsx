@@ -20,6 +20,8 @@ const Profile = () => {
     );
   };
 
+  console.log(user);
+  
   const profilesubmit = (e) => {
     e.preventDefault();
      setProfiledata.name = e.target[0].value;
