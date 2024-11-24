@@ -37,21 +37,21 @@ const Navbar = () => {
                 to={ele.link}
                 className="text-gray-800 hover:text-yellow-700 transition duration-300 font-semibold"
                 key={index}
+                onClick={() => window.scrollTo(0, 0)}
 
               >
                 {ele.button}
               </Link>
             ))}
-            <Link to='/signup' >
+            <Link to='/signup'
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 hover:bg-yellow-600 text-white rounded-lg shadow-lg font-semibold  transition duration-300">
 
                 Sign Up
 
               </button>
             </Link>
-            {/* <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
-              Sign In
-            </button> */}
 
           </div>
 
@@ -106,10 +106,6 @@ const Navbar = () => {
                   Sign Up
                 </Link>
               </button>
-              {/* <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
-
-                Sign In
-              </button> */}
             </div>
 
           </div>
