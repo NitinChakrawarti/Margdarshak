@@ -14,9 +14,7 @@ function App() {
 
       {
         isLoading ?
-          // <div className="flex justify-center items-center h-screen">
-          //   <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-700"></div>
-          // </div>
+
           <div className="flex justify-center items-center h-screen bg-gray-100">
           <div className="flex space-x-2 transform scale-150">
             <div className="w-4 h-4 bg-yellow-600 rounded-full animate-pulse delay-[100ms]"></div>
