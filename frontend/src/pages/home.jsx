@@ -68,7 +68,7 @@ const Home = () => {
         >
           Why Choose मार्गदर्शक?
         </motion.h2>
-        <div className="py-16 px-5 md:px-10 lg:px-20 bg-gray-50 flex gap-4">
+        <div className="py-16 px-5 md:px-10 lg:px-20 bg-gray-50 flex   md:flex-row flex-col gap-4">
           {[
             {
               title: "Personalized Guidance",
@@ -126,7 +126,7 @@ const Home = () => {
         >
           What Our Users Say
         </motion.h2>
-        <div className="py-16 px-5 md:px-10 lg:px-20 bg-gray-50 flex gap-4">
+        <div className="py-16 px-5 md:px-10 lg:px-20 bg-gray-50 flex gap-4 flex-col md:flex-row">
           {[
             {
               feedback:
@@ -146,7 +146,7 @@ const Home = () => {
           ].map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-none transition-shadow duration-300"
+              className="bg-white p-6 rounded-lg  shadow-md hover:shadow-none transition-shadow duration-300"
               variants={fadeIn}
             >
               <p className="text-gray-600">{testimonial.feedback}</p>
@@ -231,7 +231,7 @@ const Home = () => {
           ].map((faq, index) => (
             <motion.div
               key={index}
-              className="group  p-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white px-4 md:px-16 mx-28"
+              className="group  p-4 rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white px-8 md:px-16 md:mx-28"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 150 }}
             >
