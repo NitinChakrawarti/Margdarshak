@@ -130,18 +130,18 @@ const Home = () => {
           {[
             {
               feedback:
-                "मार्गदर्शक transformed my career! The personalized guidance and resources helped me secure my dream job.",
-              name: "Aditi Sharma",
+                "Margdarshak transformed my career! The personalized guidance and resources helped me secure my dream job.",
+              name: "Sumit Singh",
             },
             {
               feedback:
                 "The career assessment was spot-on. It helped me identify my strengths and work on my weaknesses.",
-              name: "Ravi Verma",
+              name: "Himansh Prajapati",
             },
             {
               feedback:
                 "I love the resources section. It’s like having a personal mentor available 24/7.",
-              name: "Priya Khanna",
+              name: "Praful Sahu",
             },
           ].map((testimonial, index) => (
             <motion.div
@@ -226,7 +226,7 @@ const Home = () => {
             {
               question: "Can I connect with mentors on the platform?",
               answer:
-                "Absolutely! मार्गदर्शक allows you to connect with experienced mentors who can guide you on your journey.",
+                "Absolutely! -Margdarshak allows you to connect with experienced mentors who can guide you on your journey.",
             },
           ].map((faq, index) => (
             <motion.div

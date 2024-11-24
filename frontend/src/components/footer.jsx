@@ -55,7 +55,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white">Contact Us</h3>
           <p className="mt-4 text-white/80">Email: support@margdarshak.com</p>
           <p className="text-white/80">Phone: +1 234 567 890</p>
-          <p className="text-white/80">Address: 123 Career Ave, Worktown</p>
+          <p className="text-white/80">Address: RGPV university bhopal M.P. </p>
         </div>
       </div>
 
