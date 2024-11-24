@@ -37,13 +37,16 @@ const Footer = () => {
         <div className='flex flex-col md:items-center '>
           <h3 className="text-xl font-semibold text-white">Quick Links</h3>
           <ul className="mt-4 space-y-2 flex flex-col">
-            <Link to="/" className='text-white/80 hover:text-white'>
+            <Link to="/" className='text-white/80 hover:text-white' onClick={() => window.scrollTo(0, 0)}
+            >
               Home
             </Link>
-            <Link to="/about" className='text-white/80 hover:text-white'>
+            <Link to="/about" className='text-white/80 hover:text-white ' onClick={() => window.scrollTo(0, 0)}
+            >
               About
             </Link>
-            <Link to="/ourmentors" className='text-white/80 hover:text-white'>
+            <Link to="/ourmentors" className='text-white/80 hover:text-white' onClick={() => window.scrollTo(0, 0)}
+            >
               Mentors
             </Link>
 
