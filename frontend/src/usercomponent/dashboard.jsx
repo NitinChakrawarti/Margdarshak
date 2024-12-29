@@ -1,11 +1,15 @@
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import Profile from './profile';
+// import Profile from './profile';
 import MyLearnings from './mylearnings';
 import ConnectMentors from './connectmentor';
 import Chats from './chats';
 import Sidebar from './usersidebar';
 import React from 'react';
 import { Pagenotfound } from '../pages/pagenotfound';
+import { Blog } from '../blogpage/blog';
+import { AddBlog } from '../blogpage/addblog';
+import { Postpage } from '../blogpage/postpage';
+import { EditBlog } from '../blogpage/edit';
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -45,12 +49,16 @@ const DashboardLayout = () => {
         {/* Render Route Components */}
         <div className="flex-1 pt-5 mt-20 md:mt-8 md:pt-0 md:pl-10 md:ml-64 ">
           <Routes>
-            <Route path="/" element={<Profile />} />
+            {/* <Route path="/" element={<Profile />} /> */}
+            <Route path="/" element={<MyLearnings />} />
             <Route path="/mylearnings" element={<MyLearnings />} />
             <Route path="/connectmentor" element={<ConnectMentors />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path='/blog/:id' element={<Postpage />} />
+            <Route path='/edit-blog/:id' element={<EditBlog />} />
+            <Route path="/addblog" element={<AddBlog />} />
             <Route path="/chats" element={<Chats />} />
             <Route path="*" element={<Pagenotfound />} />
-
           </Routes>
         </div>
       </div>

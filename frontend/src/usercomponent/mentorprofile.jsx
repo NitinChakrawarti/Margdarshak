@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const MentorProfileCard = ({ mentordata }) => {
     const dispatch = useDispatch();
     const mentors = useSelector(state => state.mentors);
-    const backContext = useContext(BackContext); 
+    const backContext = useContext(BackContext);
 
     const handleChat = () => {
         const isMentorInChat = mentors.mentors.find((mentor) => mentor.name === mentordata.name);

@@ -101,11 +101,11 @@ const Navbar = () => {
               </Link>
             ))}
             <div className='flex flex-col w-40'>
-              <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 rounded-lg shadow-lg font-semibold text-white hover:bg-white/50 transition duration-300" onClick={() => setIsOpen(false)}>
-                <Link to='/signup' >
+              <Link to='/signup' >
+                <button className="mt-4 md:mt-0 px-6 py-2 bg-yellow-700 rounded-lg shadow-lg font-semibold text-white hover:bg-yellow-600  transition duration-300" onClick={() => setIsOpen(false)}>
                   Sign Up
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
 
           </div>

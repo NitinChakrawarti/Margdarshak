@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import chatReducer from '../features/chat/chatSlice';
 import todoReducer from '../features/chat/todo';
+// import userReducer from '../features/user/user'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
@@ -16,6 +17,7 @@ const persistConfig = {
 const reducer = combineReducers({
     mentors: chatReducer,
     todos: todoReducer,
+    // user: userReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

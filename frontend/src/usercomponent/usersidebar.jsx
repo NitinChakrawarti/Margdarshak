@@ -1,19 +1,24 @@
 import { useContext } from 'react';
-import { BackContext } from '../context/backcontext';
+import { BackContext, LoginContext, UserContext } from '../context/backcontext';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import { useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { IoPerson } from "react-icons/io5";
 
 const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
   const backContext = useContext(BackContext);
+  const loginContext = useContext(LoginContext);
+  const userContext = useContext(UserContext);
+
   const navigate = useNavigate();  // Initialize useNavigate
+
   const { user, isAuthenticated, logout } = useAuth0();
 
   const sidebarItems = [
-    { label: 'Profile', component: '/' },
+    // { label: 'Profile', component: '/' },
     { label: 'My Learnings', component: '/mylearnings' },
     { label: 'Connect with Mentors', component: '/connectmentor' },
+    { label: 'Blogs', component: '/blog' },
     { label: 'Chats', component: '/chats' },
   ];
 
@@ -35,34 +40,50 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
         <span className="text-4xl font-bold border-b-2 pb-4 hidden md:block">मार्गदर्शक</span>
       </div>
 
-      <div className="space-y-4 p-5">
-        {sidebarItems.map((item) => (
-          <button
-            key={item.component}
-            onClick={() => handleMenuClick(item.component)}
-            className={`block w-full text-left font-bold px-4 py-2 rounded-lg ${activeItem === item.component
-              ? 'bg-white text-yellow-700'
-              : 'text-white/80 hover:text-white'
-              }`}
-          >
-            {item.label}
-          </button>
-        ))}
+      <div className="h-[70%] flex flex-col justify-between space-y-4 p-5">
         <div>
-          <button
+          <p className=' w-full text-left font-bold py-2 rounded-lg flex px-4 items-center gap-2 '> <IoPerson /> {userContext.user.name} </p>
+          {sidebarItems.map((item) => (
+            <button
+              key={item.component}
+              onClick={() => handleMenuClick(item.component)}
+              className={`block w-full text-left font-bold px-4 py-2 rounded-lg ${activeItem === item.component
+                ? 'bg-white text-yellow-700'
+                : 'text-white/80 hover:text-white'
+                }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        <div>
+          {/* <button
             onClick={() => {
               localStorage.removeItem('token');
-              logout({ logoutParams: { returnTo: window.location.origin } })
-              navigate('/signup');
+              user ? logout({ logoutParams: { returnTo: window.location.origin } })
+                : loginContext.setlogin(false) && userContext.setuser(null)
+              navigate('/')
             }}
-            className="block text-left font-bold px-4 py-2 rounded-lg bg-black text-white hover:text-white"
+            className="block text-left font-bold px-4  text-xl rounded-lg text-white hover:text-white/70"
+          >
+            Logout
+          </button> */}
+          <button
+            onClick={() => {
+              localStorage.removeItem('token'); // Removes token from localStorage
+              user
+                ? logout({ logoutParams: { returnTo: window.location.origin } })
+                : loginContext.setlogin(false) && userContext.setuser(null);
+              navigate('/');
+            }}
+            className="block text-left font-bold px-4 text-xl rounded-lg text-white hover:text-white/70"
           >
             Logout
           </button>
 
         </div>
       </div>
-
     </div>
   );
 };
