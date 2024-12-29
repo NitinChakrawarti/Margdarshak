@@ -42,4 +42,5 @@ app.get("/", (request, response) => {
 //---------middleware (Routes)---------------//
 app.use('/md/api', mainRoutes)
 
-export { app }
+export { app } 
+// module.exports = app;
