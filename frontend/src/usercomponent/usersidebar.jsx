@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { BackContext, LoginContext, UserContext } from '../context/backcontext';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate
 import { useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import { IoPerson } from "react-icons/io5";
+import Cookies from "js-cookie";
 
 const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
   const backContext = useContext(BackContext);
@@ -58,25 +59,17 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
         </div>
 
         <div>
-          {/* <button
-            onClick={() => {
-              localStorage.removeItem('token');
-              user ? logout({ logoutParams: { returnTo: window.location.origin } })
-                : loginContext.setlogin(false) && userContext.setuser(null)
-              navigate('/')
-            }}
-            className="block text-left font-bold px-4  text-xl rounded-lg text-white hover:text-white/70"
-          >
-            Logout
-          </button> */}
           <button
             onClick={() => {
-              localStorage.removeItem('token'); // Removes token from localStorage
+              Cookies.remove("logintoken");
+              loginContext.setlogin(false)
+              navigate('/signup')
               user
                 ? logout({ logoutParams: { returnTo: window.location.origin } })
                 : loginContext.setlogin(false) && userContext.setuser(null);
-              navigate('/');
             }}
+           
+    
             className="block text-left font-bold px-4 text-xl rounded-lg text-white hover:text-white/70"
           >
             Logout
